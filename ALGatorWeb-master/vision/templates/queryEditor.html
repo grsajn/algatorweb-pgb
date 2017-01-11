@@ -1,0 +1,169 @@
+{% extends "visionBase.html" %}
+
+
+{% load static from staticfiles %}
+
+
+{% block body %}
+<style>
+    .panel-heading {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 5px;
+        
+    }
+    
+    .panel {
+        margin-bottom: 10;
+    }
+</style>
+    <div class="query-editor panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Algorithms</div>                        
+                            <select class="multiselect" id="AlgSelect" multiple="multiple" style="width: 100%;">  
+                              <option value="*" data-value="*">*</option>  
+                              {% for algorithm in config.Algorithms %}
+                                <option value="{{ algorithm }}" data-value="{{ algorithm }}">{{ algorithm }}</option>
+                              {% endfor %}
+                            </select>                        
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">TestSets</div>
+                          <select class="multiselect" id="TSSelect" multiple="multiple" style="width: 100%;">    
+                            <option value="*"  data-value="*">*</option>
+                            {% for testset in config.TestSets %}
+                              <option value="{{ testset }}"  data-value="{{ testset }}">{{ testset }}</option>
+                            {% endfor %}
+                          </select>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Parameters</div>
+                          <select class="multiselect" id="InParamSelect" multiple="multiple" style="width: 100%;"> 
+                            <option value="*"  data-value="*">*</option>   
+                            {% for param in params.Parameters %}                              
+                              <option value="{{ param }}"  data-value="{{ param }}">{{ param }}</option>                            
+                            {% endfor %}
+                          </select>                            
+                    </div>
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Indicators</div>
+                           <select class="multiselect" id="OutParamSelect" multiple="multiple" style="width: 100%;">   
+                           <option value="*EM"  data-value="*EM" >*EM </option>
+                           <option value="*CNT" data-value="*CNT">*CNT</option>
+                           <option value="*JVM" data-value="*JVM">*JVM</option> 
+                             {% for param in params.Indicators %}
+                                <option value="{{ param }}"  data-value="{{ param }}">{{ param }}</option>                            
+                             {% endfor %}
+                           </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form class="form-horizontal" role="form">
+<table width=100%>
+<tr><td>
+  <label for="text-Filter" class="control-label">Filter:</label>
+</td>
+<td>
+  <input type="text" class="form-control" id="text-Filter">
+</td>
+<td>
+  <label for="checkbox-count" class="control-label">&nbsp;&nbsp;Count</label>
+</td>
+<td>
+<input type="checkbox" class="form-control" id="checkbox-Count">
+</td>
+</tr>
+<tr><td>
+  <label for="text-GroupBy" class="control-label">GroupBy:</label>
+</td>
+<td>
+  <input type="text" class="form-control" id="text-GroupBy">
+</td>
+<td>
+  <label for="text-compID" class="control-label">&nbsp;&nbsp;ComputerID:</label>
+</td>
+<td>
+  <input type="text" class="form-control" id="text-compID">
+</td>
+</tr>
+<tr><td>
+  <label for="text-SortBy" class="control-label">SortBy:</label>
+</td>
+<td>
+  <input type="text" class="form-control" id="text-SortBy">
+</td></tr>
+</table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse-query">
+                              Query
+                            </a>
+                            <img class="clickable download-query" src="{% static 'img/save.png' %}">
+                          </h4>
+                        </div>
+                        <div id="collapse-query" class="panel-collapse collapse">
+                          <div class="panel-body small-panel">
+                            <pre class="no-style pre-query-text"></pre>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse-data">
+                              Data
+                            </a>
+                            <img class="clickable download-data" src="{% static 'img/save.png' %}">
+                            <span style="float:right;" id="tblstatus">[Empty]</span>
+                          </h4>
+                        </div>
+                        <div id="collapse-data" class="panel-collapse collapse in">
+                            <div class="panel-body small-panel">
+                                <table class="table table-hover table-condensed" id="alg-data-table">
+                                </table>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>    
+  $(function(){
+    $('.multiselect').select2(
+      {
+        placeholder: "Izberi ...",      
+        tags: true,
+        tokenSeparators: [';']
+      }    
+    );
+  });
+</script>
+
+{% endblock %}
+
+
+
