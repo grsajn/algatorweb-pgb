@@ -1,0 +1,29 @@
+Tukej napišemo kaj je kej narejeno, kaj še rabmo narest.
+
+pravice:
+can_write -1
+can_delete-4
+can_create-8 - če lahko doda algoritem v projekt
+can_read-2 - bo imel vsak uporabnik
+all-65536
+sešteješ vsoto bitov in vidiš vse pravice.
+
+Dve default skupini:
+Skupina root (all_all - vse dela z vsem)
+Skupina guest (all_can_read - uponbaik ki nima imena in je brez skupine, bo lahko samo bral)
+
+Sistem pravic bo s pomočjo djangota, sistem uporabnikov in skupin tudi.
+
+pravice uporabnika: entiteta_pravica
+entiteta = ID_pravica
+
+Tabela entitete:
+- ID
+- type (projekt, algoritem, testset)
+- name
+- parent_ID
+
+Gosti bodo meli default pravice.
+
+pravice morajo biti v neki tabeli, ki se dinamično spreminja, če dodajaš, če spreminjaš
+da sistem dejansko deluje.
