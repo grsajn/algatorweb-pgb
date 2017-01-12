@@ -7,7 +7,8 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.template.defaulttags import register
-
+from django.contrib.auth.models import User
+from django.contrib.auth.models import Group
 from login.models import UserProfile, ProfileForm
 
 @register.filter
@@ -33,6 +34,10 @@ def register(request):
             password=form.cleaned_data['password1'],
             email=form.cleaned_data['email']
             )
+            group = Group.objects.get(name="guest")
+            print(group)
+            group.user_set.add(user)
+
             return HttpResponseRedirect('/register/success/')
     else:
         form = RegistrationForm()
@@ -47,8 +52,6 @@ def register(request):
 
 
 def register_success(request):
-    print('grehce smrdasdi')
-
     return render_to_response(
     'registration/success.html',
     )
