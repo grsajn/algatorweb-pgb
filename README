@@ -5,6 +5,6 @@ Git commands:
 1. git add .
 2. git commit -m "# my first commit!"
 3. git remote add origin https://github.com/grsajn/algatorweb-pgb
-4. git remove -v
+4. git remote -v
 5. git push origin master
 5. git pull origin master
