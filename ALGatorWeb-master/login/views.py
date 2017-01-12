@@ -35,7 +35,6 @@ def register(request):
             email=form.cleaned_data['email']
             )
             group = Group.objects.get(name="guest")
-            print(group)
             group.user_set.add(user)
 
             return HttpResponseRedirect('/register/success/')
