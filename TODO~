@@ -1,8 +1,5 @@
 Tukej napišemo kaj je kej narejeno, kaj še rabmo narest.
 
-1. Naredu sem tabelo entitete (cpanel_entities), ki ma notri vse tistu kar rabmo.
-2. Naredu bom še pravice (dodal v bazo)
-
 pravice:
 can_write -1
 can_delete-4
