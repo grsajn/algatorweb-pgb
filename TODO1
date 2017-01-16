@@ -1,0 +1,22 @@
+1. da se z vsakim projektom ki se ustvari, doda ustvari zraven tudi
+nov vnos grupe za pravice
+?? kako veš kdaj se projekt/algoritem doda ustvari? se to sploh da
+narediti na spletni aplikaciji? ČE se da to narediti na spletni strani
+enostavno določimo pravice in ustvarimo group z imenom projekta, algoritma itd. obenem pa dodamo userja ki je to ustvaril v to skupino
+ki lahko ureja ta projekt. 
+
+2. ne moremo uporabljati:
+    def __call__(self, environ, start_response):
+
+        if not 'ALGATOR_ROOT' in os.environ.keys():
+          os.environ['ALGATOR_ROOT'] = "/Users/Tomaz/ALGATOR_ROOT/"
+        os.environ['JWE_ROOT'] = "/Users/Tomaz/Dropbox/FRI/ALGATOR_dev/JWE/prog"
+
+        # os.environ['ALGATOR_ROOT'] = environ['ALGATOR_ROOT']
+        # os.environ['JWE_ROOT'] = environ['JWE_ROOT']
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ALGator.settings")
+        django.setup()
+        return super(WSGIEnvironment, self).__call__(environ, start_response)
+
+application = WSGIEnvironment()
+

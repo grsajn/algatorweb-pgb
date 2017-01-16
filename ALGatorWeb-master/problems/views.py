@@ -10,6 +10,7 @@ from Classes.FolderScraper import FolderScraper  # scrapes different JSON files 
 
 @login_required
 def problems(request):
+    print()
 
     scraper = FolderScraper()
 
