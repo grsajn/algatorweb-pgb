@@ -2,25 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e3aa7d3-f988-42d0-bbf7-63bfcf906043" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/problems/__init__.py" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/problems/migrations/__init__.py" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/migrations/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/problems/templates/adetails.html" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/templates/adetails.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/problems/templates/algorithm_menu.html" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/templates/algorithm_menu.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/problems/templates/apasica.html" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/templates/apasica.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/problems/templates/index.html" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/templates/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/problems/templates/pdetails.html" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/templates/pdetails.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/problems/templates/ppasica.html" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/templates/ppasica.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/problems/templates/problem_menu.html" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/templates/problem_menu.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/problems/templates/results.html" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/templates/results.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/problems/templates/tdetails.html" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/templates/tdetails.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/problems/urls.py" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/urls.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/problems/views.py" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/views.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ALGatorWeb-master/static/images/problems_icon.png" afterPath="$PROJECT_DIR$/ALGatorWeb-master/static/images/projects_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TODO1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ALGatorWeb-master/db.sqlite3" afterPath="$PROJECT_DIR$/ALGatorWeb-master/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ALGatorWeb-master/ALGator/settings.py" afterPath="$PROJECT_DIR$/ALGatorWeb-master/ALGator/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ALGatorWeb-master/.idea/workspace.xml" afterPath="$PROJECT_DIR$/ALGatorWeb-master/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ALGatorWeb-master/ALGator/urls.py" afterPath="$PROJECT_DIR$/ALGatorWeb-master/ALGator/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ALGatorWeb-master/login/forms.py" afterPath="$PROJECT_DIR$/ALGatorWeb-master/login/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ALGatorWeb-master/templates/header.html" afterPath="$PROJECT_DIR$/ALGatorWeb-master/templates/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ALGatorWeb-master/login/templates/registration/login.html" afterPath="$PROJECT_DIR$/ALGatorWeb-master/login/templates/registration/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ALGatorWeb-master/login/views.py" afterPath="$PROJECT_DIR$/ALGatorWeb-master/login/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ALGatorWeb-master/projects/views.py" afterPath="$PROJECT_DIR$/ALGatorWeb-master/projects/views.py" />
     </list>
     <ignored path="algatorweb-pgb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,24 +40,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ALGatorWeb-master/ALGator/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ALGatorWeb-master/projects/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
-              <folding>
-                <element signature="e#12#60#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -216,42 +194,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ALGatorWeb-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algatorweb-pgb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algatorweb-pgb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ALGatorWeb-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vision" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algatorweb-pgb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algatorweb-pgb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ALGatorWeb-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -414,9 +356,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -530,14 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ALGatorWeb-master/ALGator/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ALGatorWeb-master/ALGator/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -604,11 +538,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ALGatorWeb-master/projects/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+        <state relative-caret-position="221">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="12" />
           <folding>
             <element signature="e#12#60#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ALGatorWeb-master/ALGator/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

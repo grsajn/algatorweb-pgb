@@ -12,6 +12,7 @@ from Classes.FolderScraper import FolderScraper  # scrapes different JSON files 
 
 @login_required
 def projects(request):
+    print()
 
     scraper = FolderScraper()
 

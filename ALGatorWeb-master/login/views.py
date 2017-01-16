@@ -2,6 +2,8 @@
 from login.forms import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.contrib.auth import login
+from django.contrib.auth import authenticate
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
@@ -9,6 +11,7 @@ from django.template import RequestContext
 from django.template.defaulttags import register
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
+from django.contrib.auth.models import Permission
 from login.models import UserProfile, ProfileForm
 
 @register.filter
@@ -34,8 +37,9 @@ def register(request):
             password=form.cleaned_data['password1'],
             email=form.cleaned_data['email']
             )
-            group = Group.objects.get(name="guest")
+            group = Group.objects.get(name="users")
             group.user_set.add(user)
+
 
             return HttpResponseRedirect('/register/success/')
     else:
@@ -49,12 +53,19 @@ def register(request):
     variables,
     )
 
-
 def register_success(request):
     return render_to_response(
     'registration/success.html',
     )
 
+def guest(request):
+    user = authenticate(username='guest',password='guest')
+    print(user)
+    if user is not None:
+        login(request,user)
+        return HttpResponseRedirect('/')
+    else:
+        return HttpResponseRedirect('/')
 
 def logout_page(request):
     logout(request)
