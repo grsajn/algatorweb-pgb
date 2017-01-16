@@ -43,7 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # 'mod_wsgi.server',
     'login',
-    'problems',
+    'projects',
     'cpanel',
     'vision',
 )

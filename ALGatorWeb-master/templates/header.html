@@ -1,6 +1,6 @@
     {% load static from staticfiles %}
 
-    {% url 'problems:index' as problems_url %}
+    {% url 'projects:index' as projects_url %}
     {% url 'cpanel:index' as cpanel_url %}
 
     <nav class="navbar navbar-default navbar-inverse" style="margin-bottom: 0px;" role="navigation">
@@ -24,8 +24,8 @@
                     <ul class="nav navbar-nav">
                         <li class="{% ifequal request.path '/' %}active{% endifequal %}">
                            <a href="/"><img src="{% static 'images/algator_icon.png' %}" height="15px"/>&nbsp;&nbsp;ALGator&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-                        <li class="{% ifequal request.path problems_url %}active{% endifequal %}" >
-                           <a href="{{ problems_url }}"><img src="{% static 'images/problems_icon.png' %}" height="15px"/>&nbsp;&nbsp;Problems &nbsp;&nbsp;&nbsp;
+                        <li class="{% ifequal request.path projects_url %}active{% endifequal %}" >
+                           <a href="{{ projects_url }}"><img src="{% static 'images/projects_icon.png' %}" height="15px"/>&nbsp;&nbsp;Projects &nbsp;&nbsp;&nbsp;
                               
                            </a></li>
                         <li class="{% ifequal request.path cpanel_url %}active{% endifequal %}" >

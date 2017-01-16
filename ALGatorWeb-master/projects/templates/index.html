@@ -4,16 +4,20 @@
 {% block body_block %}
 
 <div class="container-fluid">
+
+
 <div class="inner-content" style="border: 1px solid #d3d7da; margin-top:10px;">
-{% if projects_list %}
+  <a href="new/"><div class="btn btn-primary">Add new project</div></a>
+
+  {% if projects_list %}
 
 {% for project in projects_list %}
 <div class="thumbnail">
   <div class="caption">
     <span class="label background-color-primary pull-right"> {{ project.algorithms|length }}</span>
-    <h3><a href="{% url 'problems:pdetails' %}?project={{ project.name }}">{{ project.name }}</a></h3>  
+    <h3><a href="{% url 'projects:pdetails' %}?project={{ project.name }}">{{ project.name }}</a></h3>
       <p>
-        
+
         {{ project.description }}
         </p>
   </div>

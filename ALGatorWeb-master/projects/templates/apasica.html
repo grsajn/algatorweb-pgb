@@ -5,12 +5,12 @@
   	Problems
   </li>
   <li>
- 	 <a href="{% url 'problems:pdetails' %}?project={{ project.name }}">
+ 	 <a href="{% url 'projects:pdetails' %}?project={{ project.name }}">
 	 	   {{ project.name }}
  	 </a> 
   </li>
   <li>
- 	 <a href="{% url 'problems:adetails' %}?project={{ project.name }}&algorithm={{ algorithm.name }}">
+ 	 <a href="{% url 'projects:adetails' %}?project={{ project.name }}&algorithm={{ algorithm.name }}">
 	 	   {{ algorithm.name }}
  	 </a> 
   </li>  

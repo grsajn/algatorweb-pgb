@@ -5,11 +5,13 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.http import HttpResponse
+from os import system
+from vision import views
 
 from Classes.FolderScraper import FolderScraper  # scrapes different JSON files and puts them together in objects.
 
 @login_required
-def problems(request):
+def projects(request):
 
     scraper = FolderScraper()
 
@@ -20,7 +22,30 @@ def problems(request):
         }
         , context_instance=RequestContext(request)
     )
-    
+
+@login_required
+def newproject(request):
+    if (request.POST.get('mybtn')):
+        pname=request.POST.get('pname')
+        pdescription=request.POST.get('pdescription')
+        sdescription=request.POST.get('sdescription')
+        aname=request.POST.get('aname')
+        alg = str(aname) if aname else 'Testing algorihtm'
+        print(alg)
+        print(pname)
+        system("java algator.Admin -ca " + pname + " " + alg)
+#        try:
+#            projectConfig = views.get_project_config(pname)
+#            projects.append(projectConfig["Name"])
+#        except:
+#            pass
+
+
+    return render_to_response(
+        'newproject.html',
+        context_instance=RequestContext(request)
+    )
+
 @login_required
 def pdetails(request):
     
