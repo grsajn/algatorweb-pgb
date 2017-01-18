@@ -1,5 +1,7 @@
 # PROBLEMS
+import codecs
 import os
+from pprint import pprint
 
 from django.core.files import File
 from django.template.defaulttags import register
@@ -40,20 +42,23 @@ def newproject(request):
         algdescription=request.POST.get('algdescription')
         algsdescription=request.POST.get('algsdescription')
 
-        if not check_if_project_exists(pname) and not check_if_algorithm_exists(pname,aname):
+        if not check_if_project_exists(pname):
             system("java algator.Admin -ca " + pname + " " + aname)
-
-        proj_conf = return_proj_conf_file(pname)
-        alg_conf = return_alg_conf_file(pname,aname)
-        description_file = open(proj_conf, 'r').read()
-        json_description = json.loads(description_file)
-        json_description["Project"]["Author"]=request.user.username
-        json_description["Project"]["Description"]=pdescription
-        with open(proj_conf, "w") as jsonFile:
-            jsonFile.write(json.dumps(json_description))
-        print(json_description)
-        return redirect('/projects/pdetails?project=' + pname)
-#/projects/pdetails?project=iPhone
+            proj_conf = return_proj_conf_file(pname)
+            alg_conf = return_alg_conf_file(pname,aname)
+            proj_description_file = open(proj_conf, 'r').read()
+            alg_description_file = open(alg_conf, 'r').read()
+            proj_json_description = json.loads(proj_description_file)
+            alg_json_description = json.loads(alg_description_file)
+            proj_json_description["Project"]["Author"]=request.user.username
+            alg_json_description["Algorithm"]["Author"]=request.user.username
+            proj_json_description["Project"]["Description"]=pdescription
+            alg_json_description["Algorithm"]["Description"]=algdescription
+            with open(proj_conf, "w") as jsonFile:
+                jsonFile.write(json.dumps(proj_json_description))
+            with open(alg_conf, "w") as jsonFile:
+                jsonFile.write(json.dumps(alg_json_description))
+            return redirect('/projects/pdetails?project=' + pname)
 #        try:
 #            projectConfig = views.get_project_config(pname)
 #            projects.append(projectConfig["Name"])
@@ -72,6 +77,7 @@ def return_proj_conf_file(project):
 
 def return_alg_conf_file(proj, alg):
     data_root = GlobalConfig().data_root_path
+    print("{0}/PROJ-{1}/algs/ALG-{2}/{2}.atal".format(data_root,proj, alg))
     return "{0}/PROJ-{1}/algs/ALG-{2}/{2}.atal".format(data_root,proj, alg)
 
 def check_if_project_exists(proj):
@@ -98,7 +104,7 @@ def pdetails(request):
           project = proj
     if project == None:
         return HttpResponse('projectName=' + projectName)
-
+    pprint(project.html_desc)
     return render_to_response(
         'pdetails.html',
         {
@@ -175,13 +181,15 @@ def adetails(request):
           algorithm = alg 
     if algorithm == None:
         return HttpResponse('Unknown algorithm: "' + projectName + '/' + algorithmName + '"')
-    
+    data_root = GlobalConfig().data_root_path
 
+    detailed_algorithm_description = codecs.open("{0}/PROJ-{1}/doc/{2}.html".format(data_root, project.name, algorithm.name),'r').read()
     return render_to_response(
         'adetails.html',
         {
             'algorithm': algorithm,
             'project' : project,
+            'detailed_algorithm_description': detailed_algorithm_description,
 
         }
         , context_instance=RequestContext(request)
