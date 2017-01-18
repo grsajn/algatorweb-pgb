@@ -28,10 +28,13 @@
                            <a href="{{ projects_url }}"><img src="{% static 'images/projects_icon.png' %}" height="15px"/>&nbsp;&nbsp;Projects &nbsp;&nbsp;&nbsp;
                               
                            </a></li>
-                        <li class="{% ifequal request.path cpanel_url %}active{% endifequal %}" >
-                           <a href="{{ cpanel_url }}"><img src="{% static 'images/my_solutions_icon.png' %}" height="25px" style="margin-top: -15px;"/>                     
-                              &nbsp;&nbsp;Control panel&nbsp;
-                           </a></li>
+
+                        {% if perms.auth.is_user %}
+                            <li class="{% ifequal request.path cpanel_url %}active{% endifequal %}" >
+                               <a href="{{ cpanel_url }}"><img src="{% static 'images/my_solutions_icon.png' %}" height="25px" style="margin-top: -15px;"/>
+                                  &nbsp;&nbsp;Control panel&nbsp;
+                               </a></li>
+                        {% endif %}
                     </ul>
 
 

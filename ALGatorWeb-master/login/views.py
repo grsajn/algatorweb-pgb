@@ -60,7 +60,6 @@ def register_success(request):
 
 def guest(request):
     user = authenticate(username='guest',password='guest')
-    print(user)
     if user is not None:
         login(request,user)
         return HttpResponseRedirect('/')

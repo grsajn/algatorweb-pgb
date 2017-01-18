@@ -9,10 +9,13 @@ from django.template.context import RequestContext
 from django.http import HttpResponse
 from os import system
 from vision import views
+from django.contrib.auth.decorators import login_required,permission_required,user_passes_test
 
 from Classes.FolderScraper import FolderScraper  # scrapes different JSON files and puts them together in objects.
 from Classes.GlobalConfig import GlobalConfig
 import json
+
+
 @login_required
 def projects(request):
     print()

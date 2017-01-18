@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 
-     
+
 {% block body_block %}
 
 <div class="container-fluid">
 
+{% if perms.auth.is_user %}
+  <div class="inner-content" style="border: 1px solid #d3d7da; margin-top:10px;">
+    <a href="new/"><div class="btn btn-primary">Add new project</div></a>
 
-<div class="inner-content" style="border: 1px solid #d3d7da; margin-top:10px;">
-  <a href="new/"><div class="btn btn-primary">Add new project</div></a>
+    {% else %}
+     <div class="inner-content" style="border: 1px solid #d3d7da; margin-top:10px;">
+{% endif %}
 
   {% if projects_list %}
 
