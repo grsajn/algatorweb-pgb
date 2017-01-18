@@ -295,8 +295,8 @@ class FolderScraper(object):
           hasTable = jsonCont["HasTable"]      if ("HasTable" in jsonCont) else ""
           columns  = jsonCont["Columns"]       if ("Columns" in jsonCont) else ""
           
-          
-          return Presenter(name, title, shtit, desc, query, 
+
+          return Presenter(name, title, shtit, desc, query,
             hasGraph, xaxis, yaxes, gtypes, xal, yal, hasTable, columns)
         except Exception as i: # if an error occures during json parsing, return "empty" graph
           print i
