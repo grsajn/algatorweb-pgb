@@ -5,13 +5,17 @@
 <div class="container-fluid">
 
 
-<div class="inner-content" style="border: 1px solid #d3d7da; margin-top:10px;">
+<div class="inner-content new_project" style="border: 1px solid #d3d7da; margin-top:10px;">
     <form action="#" method="post">
         {% csrf_token %}
-        <input type="text" class="form-control" placeholder="Project name" name="pname">
-        <input type="text" class="form-control" placeholder="Short description" name="sdescription">
-        <textarea class="form-control" rows="10" cols="40"  placeholder="Project description" name="pdescription"></textarea>
-        <input type="text" class="form-control" placeholder="Alghoritm name" name="aname">
+        <h4 class="panel-title">Project</h4>
+        <input type="text" class="form-control" placeholder="Project name" name="pname" required autocomplete="off">
+        <input type="text" class="form-control" placeholder="Short description" name="sdescription" required autocomplete="off">
+        <textarea class="form-control" rows="10" cols="40"  placeholder="Project description" name="pdescription" required autocomplete="off"></textarea>
+        <h4 class="panel-title">Algorithm</h4>
+        <input type="text" class="form-control" placeholder="Alghoritm name" name="aname" required autocomplete="off">
+        <input type="text" class="form-control" placeholder="Short description" name="algsdescription" required autocomplete="off">
+        <textarea class="form-control" rows="10" cols="40"  placeholder="Project description" name="algdescription" required autocomplete="off"></textarea>
         <a href=""><div class="btn btn-danger">Cancel</div></a>
        <input type="submit" class="btn btn-primary" value="Add" name="mybtn">
     </form>
