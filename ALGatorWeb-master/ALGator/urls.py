@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     url(r'^guest/$',guest),
     url(r'^home/$', home),
     url(r'^settings/$', settings_page),
-    url(r'^cpanel/', permission_required('auth.is_user'), (include('cpanel.urls', namespace='cpanel'))),
+    url(r'^cpanel/', (include('cpanel.urls', namespace='cpanel'))),
     url(r'^vision/', include('vision.urls', namespace='vision'))
 
 )

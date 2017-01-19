@@ -14,9 +14,11 @@ from django.http import JsonResponse
 from Classes.FolderScraper import FolderScraper  # scrapes different JSON files and puts them together in objects.
 from ALGator.taskclient import TaskClient
 from Classes.GlobalConfig import GlobalConfig
+from django.contrib.auth.decorators import login_required,permission_required,user_passes_test
 
 
 @login_required
+@permission_required('auth.is_user')
 def home(request):
 
     scraper = FolderScraper()
@@ -31,6 +33,7 @@ def home(request):
     )
 
 @login_required
+@permission_required('auth.is_user')
 def taskserver(request):
 
     serverStatus= TaskClient().talkToServer("status")
@@ -50,6 +53,7 @@ def taskserver(request):
     )
 
 @login_required
+@permission_required('auth.is_user')
 def project(request):
 
     project = request.GET.get('project', '')
@@ -72,6 +76,7 @@ def project(request):
 
 
 @login_required
+@permission_required('auth.is_user')
 def algorithm(request):
 
     projectName = request.GET.get('project', '')
@@ -126,6 +131,7 @@ def algorithm(request):
 
 
 @login_required
+@permission_required('auth.is_user')
 def results(request):
 
     file = request.GET.get('file', '')
@@ -154,6 +160,7 @@ def results(request):
     )
 
 @login_required
+@permission_required('auth.is_user')
 def history(request):
 
     projectName = request.GET.get('project', '')
@@ -185,6 +192,7 @@ def history(request):
 
 
 @login_required
+@permission_required('auth.is_user')
 def runtask(request):
     projectName = request.GET.get('project', '')
     algorithmName = request.GET.get('algorithm', '')
